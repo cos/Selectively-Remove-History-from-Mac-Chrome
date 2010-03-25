@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sqlite3'
 
-keywords = File.open("keywords.txt").readlines.collect {|k| k.chomp}
+keywords = File.open("keywords.txt").readlines.collect {|k| k.chomp}.reject {|k| k == ""}
 
 for db_name in ["History", "Archived History"]
   f = File.expand_path("~/Library/Application Support/Google/Chrome/Default/#{db_name}")
