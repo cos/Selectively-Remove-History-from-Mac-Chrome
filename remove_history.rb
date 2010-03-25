@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sqlite3'
 
-keywords = [] #put the keywords you want to remove here. E.g. ["reddit", "digg"]
+keywords = File.open("keywords.txt").readlines.collect {|k| k.chomp}
 
 for db_name in ["History", "Archived History"]
   f = File.expand_path("~/Library/Application Support/Google/Chrome/Default/#{db_name}")
