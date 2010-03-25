@@ -1,1 +1,12 @@
 This script will remove pages with certain keywords in the URL or title from your Mac version of Google Chrome. The current version of Chrome for Mac does not allow you to selectively remove history, nor can you force is to "block" recording history from certain URLs.
+
+Open the remove_history.rb file and add put the keywords you want to remove in the "keywords" array. E.g.:
+keywords = ["reddit", "digg"]
+
+Make sure Chrome is not running before you use it. Otherwise you'll get an error. To run, simply open your terminal and run:
+
+     ruby remove_history.rb
+
+No output means it succeeded.
+
+Use at your own risk. This script will modify Chrome's SQLite database and will break if Chrome changes the database format, location of files, etc.
